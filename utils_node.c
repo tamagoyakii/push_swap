@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_dq.c                                         :+:      :+:    :+:   */
+/*   utils_node.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 16:38:54 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/22 16:52:05 by jihyukim         ###   ########.fr       */
+/*   Created: 2022/07/23 16:03:04 by jihyukim          #+#    #+#             */
+/*   Updated: 2022/07/23 16:07:42 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	add_list(t_dq *a, int num)
+void	add_node(t_dq *a, int num)
 {
 	t_node	*node;
 
@@ -21,15 +21,31 @@ void	add_list(t_dq *a, int num)
 	node->idx = 0;
 	if (a->size == 0)
 	{
+		node->prev = 0;
+		node->next = 0;
 		a->head = node;
 		a->tail = node;
 	}
 	else
 	{
 		node->prev = a->tail;
-		node->next = NULL;
+		node->next = 0;
 		a->tail->next = node;
 		a->tail = node;
 	}
 	a->size++;
+}
+
+void	free_node(t_dq *dq)
+{
+	t_node	*tmp;
+
+	dq->tail = 0;
+	dq->size = 0;
+	while (dq->head)
+	{
+		tmp = dq->head;
+		dq->head = dq->head->next;
+		free(tmp);
+	}
 }

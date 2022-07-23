@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 15:40:20 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/22 16:07:36 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/23 16:07:55 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ void	error_exit(char *str)
 {
 	ft_putstr_fd(str, 1);
 	exit(1);
+}
+
+int	cal_chunk(int x)
+{
+	return (0.000000053 * x * x + 0.03 * x + 14.5);
 }
 
 void	init_dq(t_dq *dq)

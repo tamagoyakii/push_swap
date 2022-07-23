@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 15:43:20 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/22 17:50:17 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/23 16:09:14 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	parsing(char **argv, t_dq *a)
 		{
 			check_digit(arr[j]);
 			num = ft_atoi(arr[j]);
-			add_list(a, num);
+			add_node(a, num);
 		}
 		free_arr(arr);
 	}
