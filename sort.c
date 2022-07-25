@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 14:35:23 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/23 16:31:54 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/25 15:49:54 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	atob(t_dq *a, t_dq *b)
 		}
 		else if (node->idx <= num + chunk)
 		{
-			operate_and_print(P, "b\n", a, b);
+			operate_and_print(P, "b\n", b, a);
 			operate_and_print(R, "b\n", 0, b);
 			num++;
 		}
@@ -44,11 +44,13 @@ void	atob(t_dq *a, t_dq *b)
 void	btoa(t_dq *a, t_dq *b)
 {
 	int	max_idx;
+	int	pos;
 
 	while (b->size != 0)
 	{
 		max_idx = b->size - 1;
-		if (is_top(b, max_idx))
+		pos = get_max_pos(b, max_idx);
+		if (pos <= b->size / 2)
 		{
 			while (b->head->idx != max_idx)
 				operate_and_print(R, "b\n", 0, b);
@@ -62,7 +64,7 @@ void	btoa(t_dq *a, t_dq *b)
 	}
 }
 
-int	is_top(t_dq *b, int max_idx)
+int	get_max_pos(t_dq *b, int max_idx)
 {
 	int		pos;
 	t_node	*node;
@@ -74,8 +76,32 @@ int	is_top(t_dq *b, int max_idx)
 		pos++;
 		node = node->next;
 	}
-	if (pos <= b->size / 2)
-		return (1);
-	else
-		return (0);
+	return (pos);
+}
+
+void	under_five(t_dq *a, t_dq *b)
+{
+	int	min_idx;
+
+	min_idx = a->size - 3;
+	while (a->size > 3)
+	{	
+		if (a->head->idx < min_idx)
+			operate_and_print(P, "b\n", b, a);
+		else
+			operate_and_print(R, "a\n", 0, a);
+	}
+	while (!is_sorted(a))
+	{
+		if (a->head->idx > a->tail->idx)
+			operate_and_print(R, "a\n", 0, a);
+		else if (a->head->idx > a->head->next->idx)
+			operate_and_print(S, "a\n", 0, a);
+		else
+			operate_and_print(RR, "a\n", 0, a);
+	}
+	while (b->size)
+		operate_and_print(P, "a\n", a, b);
+	if (a->head->idx != 0)
+		operate_and_print(S, "a\n", 0, a);
 }

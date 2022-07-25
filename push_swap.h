@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 14:58:55 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/23 16:09:18 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/25 16:57:38 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void	check_digit(char *str);
 
 void	atob(t_dq *a, t_dq *b);
 void	btoa(t_dq *a, t_dq *b);
-int		is_top(t_dq *b, int max_idx);
+int		get_max_pos(t_dq *b, int max_idx);
+void	under_five(t_dq *a, t_dq *b);
 
 void	push_swap(t_dq *a, t_dq *b);
 void	set_index(t_dq *a);

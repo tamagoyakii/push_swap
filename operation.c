@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:59:06 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/23 16:35:00 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/25 16:57:19 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,17 @@ void	operate_and_print(int op, char *c, t_dq *dst, t_dq *src)
 
 void	swap(t_dq *dq)
 {
-	t_node	*tmp1;
-	t_node	*tmp2;
+	int	tmp_con;
+	int	tmp_idx;
 
-	tmp1 = dq->head;
-	tmp2 = tmp1->next;
-	dq->head = tmp2;
-	tmp1->prev = tmp2;
-	tmp1->next = tmp2->next;
-	tmp2->prev = 0;
-	tmp2->next = tmp1;
+	if (dq->size < 2)
+		return ;
+	tmp_con = dq->head->content;
+	tmp_idx = dq->head->idx;
+	dq->head->content = dq->head->next->content;
+	dq->head->idx = dq->head->next->idx;
+	dq->head->next->content = tmp_con;
+	dq->head->next->idx = tmp_idx;
 }
 
 void	push(t_dq *dst, t_dq *src)
@@ -60,7 +61,7 @@ void	push(t_dq *dst, t_dq *src)
 	else
 	{
 		tmp = src->head;
-		src->head = tmp->next;
+		src->head = src->head->next;
 		if (src->head)
 			src->head->prev = 0;
 		else

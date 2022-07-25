@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 15:43:20 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/23 16:09:14 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/25 16:35:08 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	check_digit(char *str)
 	int	i;
 
 	i = -1;
-	while(str[++i])
+	while (str[++i])
 	{
 		if (!ft_isdigit(str[i]) && str[i] != '-' && str[i] != '+')
 			error_exit("Error\n");
