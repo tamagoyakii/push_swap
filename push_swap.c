@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 14:15:19 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/25 16:57:04 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/26 22:06:18 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,26 @@ void	set_index(t_dq *a)
 	}
 }
 
-int	is_sorted(t_dq *a)
+void	parsing(char **argv, t_dq *a)
 {
-	t_node	*i;
-	t_node	*j;
+	long long	num;
+	char		**arr;
+	int			i;
+	int			j;
 
-	i = a->head;
-	while (i->next)
+	i = 0;
+	while (argv[++i])
 	{
-		j = i->next;
-		if (i->content > j->content)
-			return (0);
-		i = i->next;
+		arr = ft_split(argv[i], ' ');
+		j = -1;
+		while (arr[++j])
+		{
+			check_digit(arr[j]);
+			num = ft_atoi(arr[j]);
+			add_node(a, num);
+		}
+		free_arr(arr);
 	}
-	return (1);
 }
 
 int	main(int argc, char **argv)

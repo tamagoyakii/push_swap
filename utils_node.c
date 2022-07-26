@@ -6,11 +6,18 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 16:03:04 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/25 16:45:27 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/26 22:05:17 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	init_dq(t_dq *dq)
+{
+	dq->head = 0;
+	dq->tail = 0;
+	dq->size = 0;
+}
 
 void	add_node(t_dq *a, int num)
 {
