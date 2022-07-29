@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 14:35:23 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/26 22:08:29 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/29 17:20:25 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	atob(t_dq *a, t_dq *b)
 			operate_and_print(R, "b\n", 0, b);
 			num++;
 		}
-		else if (a->tail->idx <= chunk + num)
+		else if (a->tail->idx <= num + chunk)
 			operate_and_print(RR, "a\n", 0, a);
 		else
 			operate_and_print(R, "a\n", 0, a);
