@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 15:40:20 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/26 22:05:57 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/31 14:13:21 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@ void	error_exit(char *str)
 {
 	ft_putstr_fd(str, 1);
 	exit(1);
-}
-
-int	cal_chunk(int x)
-{
-	return (0.000000053 * x * x + 0.03 * x + 14.5);
 }
 
 int	is_sorted(t_dq *a)
@@ -67,4 +62,31 @@ void	free_arr(char **arr)
 	}
 	free(arr);
 	arr = 0;
+}
+
+int	ft_atol(const char *str)
+{
+	int			sign;
+	long long	ret;
+
+	sign = 1;
+	ret = 0;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str && ((*str == '-') || (*str == '+')))
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	while (*str && *str >= 48 && *str <= 57)
+	{
+		ret = ret * 10 + (*str - 48);
+		if (ret * sign > 2147483647)
+			error_exit("Error\n");
+		else if (ret * sign < -2147483648)
+			error_exit("Error\n");
+		str++;
+	}
+	return (ret * sign);
 }

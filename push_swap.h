@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 14:58:55 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/26 22:11:15 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/31 14:12:56 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	push_swap(t_dq *a, t_dq *b);
 void	set_index(t_dq *a);
 void	parsing(char **argv, t_dq *a);
 
+int		cal_chunk(int x);
 int		get_max_pos(t_dq *b, int max_idx);
 void	under_five(t_dq *a, t_dq *b);
 void	atob(t_dq *a, t_dq *b);
@@ -51,10 +52,11 @@ void	rotate(t_dq *dq);
 void	reverse_rotate(t_dq *dq);
 
 void	error_exit(char *str);
-int		cal_chunk(int x);
+
 int		is_sorted(t_dq *a);
 void	check_digit(char *str);
 void	free_arr(char **arr);
+int		ft_atol(const char *str);
 
 void	init_dq(t_dq *dq);
 void	add_node(t_dq *a, int num);

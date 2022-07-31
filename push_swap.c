@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 14:15:19 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/26 22:06:18 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/31 14:13:36 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ void	parsing(char **argv, t_dq *a)
 	char		**arr;
 	int			i;
 	int			j;
+	int			n;
 
+	n = 0;
 	i = 0;
 	while (argv[++i])
 	{
@@ -65,11 +67,14 @@ void	parsing(char **argv, t_dq *a)
 		while (arr[++j])
 		{
 			check_digit(arr[j]);
-			num = ft_atoi(arr[j]);
+			num = ft_atol(arr[j]);
 			add_node(a, num);
+			n++;
 		}
 		free_arr(arr);
 	}
+	if (n == 0)
+		error_exit("Error\n");
 }
 
 int	main(int argc, char **argv)

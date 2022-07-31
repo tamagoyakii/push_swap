@@ -6,11 +6,16 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 14:35:23 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/29 17:46:37 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/07/31 14:13:28 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	cal_chunk(int x)
+{
+	return (0.000000053 * x * x + 0.03 * x + 14.5);
+}
 
 int	get_max_pos(t_dq *b, int max_idx)
 {
