@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
+/*   By: jihyukim <jihyukim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 14:58:55 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/31 14:12:56 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/04 14:07:01 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	rotate(t_dq *dq);
 void	reverse_rotate(t_dq *dq);
 
 void	error_exit(char *str);
-
 int		is_sorted(t_dq *a);
 void	check_digit(char *str);
 void	free_arr(char **arr);

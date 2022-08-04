@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 14:15:19 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/08/04 13:50:11 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/04 14:06:52 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	parsing(char **argv, t_dq *a)
 		free_arr(arr);
 	}
 	if (n == 0)
-		error_exit("Error\n");
+		error_exit("");
 }
 
 int	main(int argc, char **argv)
