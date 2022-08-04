@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
+/*   By: jihyukim <jihyukim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 14:15:19 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/31 14:13:36 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/04 13:50:11 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,9 @@ int	main(int argc, char **argv)
 	init_dq(&a);
 	init_dq(&b);
 	parsing(argv, &a);
+	set_index(&a);
 	if (!is_sorted(&a))
-	{
-		set_index(&a);
 		push_swap(&a, &b);
-	}
 	free_node(&a);
 	free_node(&b);
 	return (0);
