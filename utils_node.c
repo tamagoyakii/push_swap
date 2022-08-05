@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 16:03:04 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/07/26 22:05:17 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/04 20:53:12 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	add_node(t_dq *a, int num)
 	t_node	*node;
 
 	node = malloc(sizeof(t_node));
+	if (!node)
+		error_exit("");
 	node->content = num;
 	node->idx = 0;
 	if (a->size == 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jihyukim <jihyukim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 14:15:19 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/08/04 14:06:52 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/04 20:56:37 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	parsing(char **argv, t_dq *a)
 	while (argv[++i])
 	{
 		arr = ft_split(argv[i], ' ');
+		if (!arr)
+			error_exit("");
 		j = -1;
 		while (arr[++j])
 		{
