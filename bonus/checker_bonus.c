@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 17:25:02 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/08/08 17:41:15 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/08 18:39:55 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	check_op(t_dq *a, t_dq *b)
 			break;
 		push_swap_bonus(op, a, b);
 		free(op);
+		op = 0;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 16:03:04 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/08/08 17:25:50 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/08 18:41:25 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void	free_node(t_dq *dq)
 		tmp = dq->head;
 		dq->head = dq->head->next;
 		free(tmp);
+		tmp = 0;
 	}
 }
