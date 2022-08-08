@@ -6,11 +6,11 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 17:25:02 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/08/08 18:39:55 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/08 18:49:34 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap_bonus.h"
+#include "push_swap_bonus.h"
 
 void	check_op(t_dq *a, t_dq *b)
 {
@@ -20,7 +20,7 @@ void	check_op(t_dq *a, t_dq *b)
 	{
 		op = get_next_line(0);
 		if (op == NULL)
-			break;
+			break ;
 		push_swap_bonus(op, a, b);
 		free(op);
 		op = 0;

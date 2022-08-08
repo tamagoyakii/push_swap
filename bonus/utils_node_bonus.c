@@ -6,11 +6,11 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 16:03:04 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/08/08 18:41:25 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/08 18:48:28 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap_bonus.h"
+#include "push_swap_bonus.h"
 
 void	init_dq(t_dq *dq)
 {

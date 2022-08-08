@@ -6,11 +6,11 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 17:09:38 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/08/08 17:27:39 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/08 18:48:40 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap_bonus.h"
+#include "push_swap_bonus.h"
 
 void	operate_bonus(int op, t_dq *dst, t_dq *src)
 {

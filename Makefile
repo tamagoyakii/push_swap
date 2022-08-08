@@ -6,7 +6,7 @@
 #    By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/21 14:15:32 by jihyukim          #+#    #+#              #
-#    Updated: 2022/08/08 17:40:48 by jihyukim         ###   ########.fr        #
+#    Updated: 2022/08/08 18:46:40 by jihyukim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,11 +39,11 @@ all : $(NAME)
 bonus : $(BONUS)
 
 $(NAME) : $(OBJS)
-	@make -C libft
+	@make re -C libft
 	@$(CC) $(CFLAGS) -L ./libft -lft $(OBJS) -o $@
 
 $(BONUS) : $(OBJS_BONUS)
-	@make -C libft
+	@make re -C libft
 	@$(CC) $(CFLAGS) -L ./libft -lft $(OBJS_BONUS) -o $@
 
 %.o :%.c

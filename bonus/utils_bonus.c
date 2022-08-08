@@ -6,11 +6,11 @@
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 15:40:20 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/08/08 17:25:52 by jihyukim         ###   ########.fr       */
+/*   Updated: 2022/08/08 18:48:31 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap_bonus.h"
+#include "push_swap_bonus.h"
 
 void	error_exit(char *str)
 {
