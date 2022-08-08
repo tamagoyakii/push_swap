@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 14:58:55 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/08/08 17:20:50 by jihyukim         ###   ########.fr       */
+/*   Created: 2022/08/08 15:33:01 by jihyukim          #+#    #+#             */
+/*   Updated: 2022/08/08 17:32:31 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 
-# define S 1
-# define P 2
-# define R 3
-# define RR 4
+# define READ_EOF 0
+# define READ_SUCCESS 1
+
+# define S 2
+# define P 3
+# define R 4
+# define RR 5
+# define B_SS 6
+# define B_RR 7
+# define B_RRR 8
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 typedef struct s_node
 {
@@ -35,17 +45,16 @@ typedef struct s_deque
 	int		size;
 }				t_dq;
 
-void	push_swap(t_dq *a, t_dq *b);
-void	set_index(t_dq *a);
-void	parsing(char **argv, t_dq *a);
+char	*gnl_strchr(const char *s, int c);
+char	*gnl_strjoin(char const *s1, char const *s2);
+char	*split_line(char **storage);
+char	*read_last(char	**storage);
+char	*get_next_line(int fd);
 
-int		cal_chunk(int x);
-int		get_max_pos(t_dq *b, int max_idx);
-void	under_five(t_dq *a, t_dq *b);
-void	atob(t_dq *a, t_dq *b);
-void	btoa(t_dq *a, t_dq *b);
+void	check_op(t_dq *a, t_dq *b);
+void	check_sort(t_dq *a, t_dq *b);
 
-void	operate_and_print(int op, char *c, t_dq *dst, t_dq *src);
+void	operate_bonus(int op, t_dq *dst, t_dq *src);
 void	swap(t_dq *dq);
 void	push(t_dq *dst, t_dq *src);
 void	rotate(t_dq *dq);
@@ -60,5 +69,8 @@ int		ft_atol(const char *str);
 void	init_dq(t_dq *dq);
 void	add_node(t_dq *a, int num);
 void	free_node(t_dq *dq);
+
+void	push_swap_bonus(char *op, t_dq *a, t_dq *b);
+void	parsing(char **argv, t_dq *a);
 
 #endif

@@ -1,53 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jihyukim <jihyukim@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 14:15:19 by jihyukim          #+#    #+#             */
-/*   Updated: 2022/08/08 17:27:56 by jihyukim         ###   ########.fr       */
+/*   Created: 2022/08/08 15:32:43 by jihyukim          #+#    #+#             */
+/*   Updated: 2022/08/08 17:28:01 by jihyukim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+# include "push_swap_bonus.h"
 
-void	push_swap(t_dq *a, t_dq *b)
+void	push_swap_bonus(char *op, t_dq *a, t_dq *b)
 {
-	if (a->size == 2)
-	{
-		operate_and_print(S, "a\n", 0, a);
-	}
-	else if (a->size <= 5)
-		under_five(a, b);
+	if (ft_strncmp(op, "pa\n", 3) == 0)
+		operate_bonus(P, a, b);
+	else if (ft_strncmp(op, "pb\n", 3) == 0)
+		operate_bonus(P, b, a);
+	else if (ft_strncmp(op, "sa\n", 3) == 0)
+		operate_bonus(S, 0, a);
+	else if (ft_strncmp(op, "sb\n", 3) == 0)
+		operate_bonus(S, 0, b);
+	else if (ft_strncmp(op, "ss\n", 3) == 0)
+		operate_bonus(B_SS, a, b);
+	else if (ft_strncmp(op, "ra\n", 3) == 0)
+		operate_bonus(R, 0, a);
+	else if (ft_strncmp(op, "rb\n", 3) == 0)
+		operate_bonus(R, 0, b);
+	else if (ft_strncmp(op, "rr\n", 3) == 0)
+		operate_bonus(B_RR, a, b);
+	else if (ft_strncmp(op, "rra\n", 4) == 0)
+		operate_bonus(RR, 0, a);
+	else if (ft_strncmp(op, "rrb\n", 4) == 0)
+		operate_bonus(RR, 0, b);
+	else if (ft_strncmp(op, "rrr\n", 4) == 0)
+		operate_bonus(B_RRR, a, b);
 	else
-	{
-		atob(a, b);
-		btoa(a, b);
-	}
-}
-
-void	set_index(t_dq *a)
-{
-	t_node	*i;
-	t_node	*j;
-
-	i = a->head;
-	while (i)
-	{
-		j = i->next;
-		while (j)
-		{
-			if (i->content > j->content)
-				i->idx += 1;
-			else if (i->content < j->content)
-				j->idx += 1;
-			else
-				error_exit("Error\n");
-			j = j->next;
-		}
-		i = i->next;
-	}
+		error_exit("");
 }
 
 void	parsing(char **argv, t_dq *a)
@@ -89,9 +79,7 @@ int	main(int argc, char **argv)
 	init_dq(&a);
 	init_dq(&b);
 	parsing(argv, &a);
-	set_index(&a);
-	if (!is_sorted(&a))
-		push_swap(&a, &b);
-	free_node(&a);
+	check_op(&a, &b);
+	check_sort(&a, &b);
 	return (0);
 }
