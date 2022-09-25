@@ -1,3 +1,2 @@
 # push_swap
-
-***Because Swap_push isn’t as natural***
+입력받는 500개 이하의 숫자들을 두 개의 스택을 이용하여 정렬하는 프로그램 구현
